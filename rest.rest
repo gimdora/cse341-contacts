@@ -23,10 +23,10 @@ GET http://localhost:3000/contacts/000000000000000000000000
 ### ============================================
 
 ### Get all contacts (Production)
-GET https://YOUR-APP-NAME.onrender.com/contacts
+GET https://cse341-contacts-j7ln.onrender.com/contacts
 
 ### Get single contact by id (Production) - John
-GET https://YOUR-APP-NAME.onrender.com/contacts/6a088e82fc65f561beda2ed0
+GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed0
 
 ### Get single contact by id (Production) - Charlie
-GET https://YOUR-APP-NAME.onrender.com/contacts/6a088e82fc65f561beda2ed4    
+GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed4    
