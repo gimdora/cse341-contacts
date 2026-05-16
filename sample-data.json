@@ -1,0 +1,37 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "[email protected]",
+    "favoriteColor": "blue",
+    "birthday": "1990-05-15"
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "[email protected]",
+    "favoriteColor": "green",
+    "birthday": "1985-08-22"
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "[email protected]",
+    "favoriteColor": "red",
+    "birthday": "1992-12-03"
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Williams",
+    "email": "[email protected]",
+    "favoriteColor": "yellow",
+    "birthday": "1988-03-17"
+  },
+  {
+    "firstName": "Charlie",
+    "lastName": "Brown",
+    "email": "[email protected]",
+    "favoriteColor": "purple",
+    "birthday": "1995-07-09"
+  }
+]
