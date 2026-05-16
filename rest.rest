@@ -19,7 +19,7 @@ GET http://localhost:3000/contacts/000000000000000000000000
 
 
 ### ============================================
-### PRODUCTION TESTS (Render) - update after deploy
+### PRODUCTION TESTS (Render)
 ### ============================================
 
 ### Get all contacts (Production)
@@ -29,4 +29,10 @@ GET https://cse341-contacts-j7ln.onrender.com/contacts
 GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed0
 
 ### Get single contact by id (Production) - Charlie
-GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed4    
+GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed4
+
+### Test: Invalid ID format on production (should return 400)
+GET https://cse341-contacts-j7ln.onrender.com/contacts/this-is-not-a-valid-id
+
+### Test: Valid format but non-existent on production (should return 404)
+GET https://cse341-contacts-j7ln.onrender.com/contacts/000000000000000000000000
