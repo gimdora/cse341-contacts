@@ -1,0 +1,129 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Contacts API",
+    "description": "API for managing contacts. CSE 341 Week 02 Project.",
+    "version": "1.0.0"
+  },
+  "host": "cse341-contacts-j7ln.onrender.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Contacts",
+      "description": "Endpoints for managing contacts"
+    }
+  ],
+  "schemes": ["https"],
+  "paths": {
+    "/contacts/": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get all contacts",
+        "description": "Returns a list of all contacts in the database.",
+        "responses": {
+          "200": { "description": "OK" },
+          "500": { "description": "Server Error" }
+        }
+      },
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Create a new contact",
+        "description": "Creates a new contact. All fields are required.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Contact" }
+          }
+        ],
+        "responses": {
+          "201": { "description": "Created" },
+          "400": { "description": "Bad Request - missing required fields" },
+          "500": { "description": "Server Error" }
+        }
+      }
+    },
+    "/contacts/{id}": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get a single contact by id",
+        "description": "Returns a single contact matching the provided id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "MongoDB ObjectId of the contact"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" },
+          "400": { "description": "Invalid id" },
+          "404": { "description": "Contact not found" },
+          "500": { "description": "Server Error" }
+        }
+      },
+      "put": {
+        "tags": ["Contacts"],
+        "summary": "Update a contact by id",
+        "description": "Updates the contact matching the provided id. All fields are required.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "MongoDB ObjectId of the contact"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": { "$ref": "#/definitions/Contact" }
+          }
+        ],
+        "responses": {
+          "204": { "description": "No Content - updated successfully" },
+          "400": { "description": "Bad Request - invalid id or missing fields" },
+          "404": { "description": "Contact not found" },
+          "500": { "description": "Server Error" }
+        }
+      },
+      "delete": {
+        "tags": ["Contacts"],
+        "summary": "Delete a contact by id",
+        "description": "Deletes the contact matching the provided id.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "MongoDB ObjectId of the contact"
+          }
+        ],
+        "responses": {
+          "200": { "description": "Deleted successfully" },
+          "400": { "description": "Invalid id" },
+          "404": { "description": "Contact not found" },
+          "500": { "description": "Server Error" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Contact": {
+      "type": "object",
+      "required": ["firstName", "lastName", "email", "favoriteColor", "birthday"],
+      "properties": {
+        "firstName": { "type": "string", "example": "John" },
+        "lastName": { "type": "string", "example": "Doe" },
+        "email": { "type": "string", "example": "[email protected]" },
+        "favoriteColor": { "type": "string", "example": "blue" },
+        "birthday": { "type": "string", "example": "1990-05-15" }
+      }
+    }
+  }
+}

@@ -8,14 +8,32 @@ GET http://localhost:3000/contacts
 ### Get single contact by id (Local) - John
 GET http://localhost:3000/contacts/6a088e82fc65f561beda2ed0
 
-### Get single contact by id (Local) - Charlie
-GET http://localhost:3000/contacts/6a088e82fc65f561beda2ed4
+### Create new contact (Local)
+POST http://localhost:3000/contacts
+Content-Type: application/json
 
-### Test: Invalid ID format (should return 400)
-GET http://localhost:3000/contacts/this-is-not-a-valid-id
+{
+  "firstName": "Test",
+  "lastName": "Local",
+  "email": "[email protected]",
+  "favoriteColor": "orange",
+  "birthday": "2000-01-01"
+}
 
-### Test: Valid format but non-existent (should return 404)
-GET http://localhost:3000/contacts/000000000000000000000000
+### Update contact (Local) - REPLACE ID with one created above
+PUT http://localhost:3000/contacts/REPLACE_WITH_ID
+Content-Type: application/json
+
+{
+  "firstName": "Updated",
+  "lastName": "Local",
+  "email": "[email protected]",
+  "favoriteColor": "pink",
+  "birthday": "2000-01-01"
+}
+
+### Delete contact (Local) - REPLACE ID
+DELETE http://localhost:3000/contacts/REPLACE_WITH_ID
 
 
 ### ============================================
@@ -28,11 +46,29 @@ GET https://cse341-contacts-j7ln.onrender.com/contacts
 ### Get single contact by id (Production) - John
 GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed0
 
-### Get single contact by id (Production) - Charlie
-GET https://cse341-contacts-j7ln.onrender.com/contacts/6a088e82fc65f561beda2ed4
+### Create new contact (Production)
+POST https://cse341-contacts-j7ln.onrender.com/contacts
+Content-Type: application/json
 
-### Test: Invalid ID format on production (should return 400)
-GET https://cse341-contacts-j7ln.onrender.com/contacts/this-is-not-a-valid-id
+{
+  "firstName": "TestProd",
+  "lastName": "User",
+  "email": "[email protected]",
+  "favoriteColor": "cyan",
+  "birthday": "1999-06-15"
+}
 
-### Test: Valid format but non-existent on production (should return 404)
-GET https://cse341-contacts-j7ln.onrender.com/contacts/000000000000000000000000
+### Update contact (Production) - REPLACE ID
+PUT https://cse341-contacts-j7ln.onrender.com/contacts/REPLACE_WITH_ID
+Content-Type: application/json
+
+{
+  "firstName": "UpdatedProd",
+  "lastName": "User",
+  "email": "[email protected]",
+  "favoriteColor": "magenta",
+  "birthday": "1999-06-15"
+}
+
+### Delete contact (Production) - REPLACE ID
+DELETE https://cse341-contacts-j7ln.onrender.com/contacts/REPLACE_WITH_ID
